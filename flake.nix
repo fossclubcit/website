@@ -14,6 +14,9 @@
             nodejs_22
             bun
          	];
+          shellHook = ''
+            export NIX_SHELL_NAME="fcc-web";
+          '';
         };
       }
     );
