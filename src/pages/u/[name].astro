@@ -1,0 +1,18 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/layout.astro";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (() => {
+    return [
+        { params: { name: "alice" } },
+        { params: { name: "bob" } },
+        { params: { name: "charlie" } },
+    ];
+}) satisfies GetStaticPaths;
+---
+
+<Layout title={`Hello, ${Astro.params.name}`}>
+    <h1>Hello, {Astro.params.name}!</h1>
+    <p>This is a static page generated for {Astro.params.name}.</p>
+</Layout>
